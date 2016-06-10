@@ -1,10 +1,8 @@
 
 #AUTEUR
-Chancerel Nicolas
-
-Jerome Ullmann
-
-Jean-Pierre Cheney 
+Chancerel Nicolas 
+Jerome Ullmann 
+Jean-Pierre Cheney  
 
 # PRE-REQUIS
   
