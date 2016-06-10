@@ -1,6 +1,6 @@
 
 #AUTEUR
-=Chancerel Nicolas
+====Chancerel Nicolas
 =Jerome Ullmann
 =Jean-Pierre Cheney 
 # PRE-REQUIS
