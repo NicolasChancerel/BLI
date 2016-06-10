@@ -1,7 +1,7 @@
 
-#Author
-Chancerel Nicolas 
-Jerome Ullmann   
+#AUTEUR
+Chancerel Nicolas
+Jerome Ullmann
 Jean-Pierre Cheney 
 # PRE-REQUIS
   
