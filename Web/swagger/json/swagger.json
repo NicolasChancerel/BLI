@@ -1,0 +1,1091 @@
+{
+  "swagger": "2.0",
+  "info": 
+  {
+    "title": "Api BLI M2X",
+    "description": "API d'acces a M2X",
+    "version": "0.9",
+    "contact": 
+    {
+      "email": "jean-pierre.cheney@laposte.fr"
+    },
+
+    "license": 
+    {
+      "name": "La Poste/Privée",
+      "url": "http://nowhere.org"
+    }
+  },
+  "schemes": 
+  [
+    "http"
+  ],
+
+  "basePath": "/",
+  "tags": 
+  [
+    {
+      "name": "postMessage",
+      "description": "Web service de postage de message"
+    }
+	,
+    {
+      "name": "getAllMessages",
+      "description": "Web service de recuperation de tous les messages"
+    }
+	,
+	{
+      "name": "insertCle",
+      "description": "Web service de creation de couple cle"
+    }
+	,
+	{
+      "name": "insertRfid",
+      "description": "Web service de creation de rfid"
+    }
+	,
+	{
+      "name": "deleteRfid",
+      "description": "Web service de suppression de rfid"
+    }
+	,
+	{
+      "name": "updateRfidDateLectureNotification",
+      "description": "Web service d'update de rfid (date de lecture de la notification)"
+    }
+	,
+	{
+      "name": "updateRfidDateReception",
+      "description": "Web service d'update de rfid (date de reception)"
+    }
+	,
+	{
+      "name": "afficheCles",
+      "description": "Web service d'affichage du parametrage"
+    }
+	,
+	{
+      "name": "afficheRfidById",
+      "description": "Web service de recuperation d'un rfid"
+    }
+	,
+	{
+      "name": "afficheRfidByIdDevice",
+      "description": "Web service de recuperation de rfid"
+    }
+	,
+	{
+      "name": "afficheRfidByIdCleParams",
+      "description": "Web service de recuperation de rfid"
+    }
+	,
+	{
+      "name": "afficheAllRfid",
+      "description": "Web service de recuperation de tous les rfid"
+    }
+	
+  ],
+
+  "paths": 
+  {
+    "/ws/postMessage.php": 
+    {
+      "post": 
+      {
+        "tags": 
+        [
+          "postMessage"
+        ],
+
+        "summary": "Envoi de message",
+        "description": "Web service d'envoi de message. Les données sont alors stockés sur ATT M2X.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "apiKey",
+            "in": "formData",
+            "description": "La clé api d'acces à M2X.",
+            "required": true,
+            "type": "string",
+            "default": "0cf6abec0e9ea8f4bd8f2d267bb2eacf"
+          },
+		  {
+            "name": "deviceId",
+            "in": "formData",
+            "description": "L'id du device.",
+            "required": true,
+            "type": "string",
+            "default": "07966069e262d4bd198568352c3a4318"
+          },
+		  {
+            "name": "streamId",
+            "in": "formData",
+            "description": "L'id du stream du device M2X. (on peut passer plusieurs streams, séparés par un ';')",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "valeur",
+            "in": "formData",
+            "description": "La valeur à passer.(on peut passer plusieurs valeurs, séparées par un ';'. Evidemment, le nombre de valeurs doit etre egale au nombre de streams...)",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"valeurs": {
+						"type": "array",
+						"items" :{
+							"type" : "object",
+							"properties": {
+								"apiKey": {
+									"type" : "string"
+								},
+								"deviceId": {
+									"type" : "string"
+								},
+								"streamId": {
+									"type" : "string"
+								},
+								"valeur": {
+									"type" : "string"
+								}
+							}
+						}
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+  
+    "/ws/getAllMessages.php": 
+    {
+      "get": 
+      {
+        "tags": 
+        [
+          "getAllMessages"
+        ],
+
+        "summary": "Recuperation de tous les messages",
+        "description": "Web service de recuperation de tous les messages stockés sur ATT M2X pour le device et le stream donné.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "apiKey",
+            "in": "query",
+            "description": "Le clé api d'acces à M2X.",
+            "required": true,
+            "type": "string",
+            "default": "0cf6abec0e9ea8f4bd8f2d267bb2eacf"
+          },
+		  {
+            "name": "deviceId",
+            "in": "query",
+            "description": "L'id du device.",
+            "required": true,
+            "type": "string",
+            "default": "07966069e262d4bd198568352c3a4318"
+          },
+		  {
+            "name": "streamId",
+            "in": "query",
+            "description": "L'id du stream du device M2X.",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"values": {
+						"type": "object",
+						"properties": {
+							"value":{
+								"type": "array",
+								"items" :{
+									"type" : "object",
+									"properties": {
+										"timestamp": {
+											"type" : "string"
+										},
+										"valeur": {
+											"type" : "string"
+										}
+									}
+								}
+							}
+						}
+						
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/insertCle.php": 
+    {
+      "post": 
+      {
+        "tags": 
+        [
+          "insertCle"
+        ],
+
+        "summary": "Envoi de couple cle - libelle",
+        "description": "Web service de couple cle - libelle, par exemple cle=NOM_PRODUIT et libelle=Nom du produit",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "cle",
+            "in": "formData",
+            "description": "La clé de la ligne de parametrage",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "libelle",
+            "in": "formData",
+            "description": "Le libelle de la ligne de parametrage",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/insertRfid.php": 
+    {
+      "post": 
+      {
+        "tags": 
+        [
+          "insertRfid"
+        ],
+
+        "summary": "Envoi de rfid avec des couple cle,valeur pour chaque parametre a stocker",
+        "description": "Web service de creation de rfid",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "L'id du rfid",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "nom_interne",
+            "in": "formData",
+            "description": "Un nom interne, a voir pour quoi l'utiliser...",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "cles_params",
+            "in": "formData",
+            "description": "Les cles de parametrage a stocker (vide si pas de parametrage), separees par un ;",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "valeurs",
+            "in": "formData",
+            "description": "Les valeurs de parametrage a stocker (vide si pas de parametrage), separees par un ;",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "affiche_emetteur",
+            "in": "formData",
+            "description": "Si on veut afficher ce parametre coté emetteur, on met 1 sinon 0), separees par un ;",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "affiche_client",
+            "in": "formData",
+            "description": "Si on veut afficher ce parametre coté client (recepteur), on met 1 sinon 0), separees par un ;",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/deleteRfid.php": 
+    {
+      "post": 
+      {
+        "tags": 
+        [
+          "deleteRfid"
+        ],
+
+        "summary": "Suppression de rfid ",
+        "description": "Web service de suppression de rfid",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "L'id du rfid",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/updateRfidDateReception.php": 
+    {
+      "post": 
+      {
+        "tags": 
+        [
+          "updateRfidDateReception"
+        ],
+
+        "summary": "Update de la date de reception",
+        "description": "Mise a jour de la date de reception du rfid",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "L'id du rfid",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+		  ,
+		  {
+            "name": "id_device",
+            "in": "formData",
+            "description": "L'id du device (la BLI)",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/updateRfidDateLectureNotification.php": 
+    {
+      "post": 
+      {
+        "tags": 
+        [
+          "updateRfidDateLectureNotification"
+        ],
+        "summary": "Update de la date de lecture de notification",
+        "description": "Mise a jour de la date de lecture de notification du rfid",
+        "produces": 
+        [
+          "application/json"
+        ],
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "id",
+            "in": "formData",
+            "description": "L'id du rfid",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+		  ,
+		  {
+            "name": "longitude",
+            "in": "formData",
+            "description": "La longitude du portable du client",
+            "required": false,
+            "type": "number",
+			"format": "float",
+            "default": ""
+          }
+		  ,
+		  {
+            "name": "latitude",
+            "in": "formData",
+            "description": "La latitude du portable du client",
+            "required": false,
+            "type": "number",
+			"format": "float",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	
+	"/rfid/ws/afficheCles.php": 
+    {
+      "get": 
+      {
+        "tags": 
+        [
+          "afficheCles"
+        ],
+
+        "summary": "Recuperation de tous couples cle, libelle de parametrage",
+        "description": "Web service de recuperation de tous les couples de parametrage.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"values": {
+						
+						"type": "array",
+						"items" :{
+							"type" : "object",
+							"properties": {
+								"cle": {
+									"type" : "string"
+								},
+								"libelle": {
+									"type" : "string"
+								}
+							}
+						}
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/afficheRfidById.php": 
+    {
+      "get": 
+      {
+        "tags": 
+        [
+          "afficheRfidById"
+        ],
+
+        "summary": "Recuperation des informations postees pour un rfid",
+        "description": "Web service de recuperation des informations d'un rfid : nom_interne et tous les couples cle, libelle, valeur.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "L'id du rfid.",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "affiche_emetteur",
+            "in": "query",
+            "description": "Filtrage pour l'emetteur (afficher que les parametres emetteurs, 0 ou 1)...",
+            "required": false,
+            "type": "integer",
+            "default": ""
+          },
+		  {
+            "name": "affiche_client",
+            "in": "query",
+            "description": "Filtrage pour le client (afficher que les parametres clients, 0 ou 1)...",
+            "required": false,
+            "type": "integer",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"rfid": {
+						"type": "object",
+						"properties": {
+							"id" :{
+								"type" : "string"
+							},
+							"nom_interne" :{
+								"type" : "string"
+							},
+							"date_creation" :{
+								"type" : "string"
+							},
+							"date_reception" :{
+								"type" : "string"
+							},
+							"date_lecture_notification" :{
+								"type" : "string"
+							},
+							"id_device" :{
+								"type" : "string"
+							},
+							"fields":{
+								"type": "array",
+								"items" :{
+									"type" : "object",
+									"properties": {
+										"cle_params": {
+											"type" : "string"
+										},
+										"libelle_params": {
+											"type" : "string"
+										},
+										"valeur": {
+											"type" : "string"
+										}
+									}
+								}
+							}
+						}
+						
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/afficheRfidByIdCleParams.php": 
+    {
+      "get": 
+      {
+        "tags": 
+        [
+          "afficheRfidByIdCleParams"
+        ],
+
+        "summary": "Recuperation des informations postees pour des rfid",
+        "description": "Web service de recuperation des informations de rfid ayant la meme proporete, c'est a dire, la meme cle params (NOM_PRODUIT par exemple) et la meme valeur de params.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+          {
+            "name": "cleParams",
+            "in": "query",
+            "description": "cleParams du rfid.",
+            "required": true,
+            "type": "string",
+            "default": ""
+          }
+		  ,
+		  {
+            "name": "valeur",
+            "in": "query",
+            "description": "Valeur de la cle params",
+            "required": true,
+            "type": "integer",
+            "default": ""
+          }
+		  ,
+		  {
+            "name": "valeur",
+            "in": "query",
+            "description": "Filtrage pour l'emetteur (afficher que les parametres emetteurs, 0 ou 1)...",
+            "required": false,
+            "type": "integer",
+            "default": ""
+          }
+		  ,
+		  {
+            "name": "affiche_client",
+            "in": "query",
+            "description": "Filtrage pour le client (afficher que les parametres clients, 0 ou 1)...",
+            "required": false,
+            "type": "integer",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"rfid": {
+						"type": "object",
+						"properties": {
+							"id" :{
+								"type" : "string"
+							},
+							"nom_interne" :{
+								"type" : "string"
+							},
+							"date_creation" :{
+								"type" : "string"
+							},
+							"date_reception" :{
+								"type" : "string"
+							},
+							"date_lecture_notification" :{
+								"type" : "string"
+							},
+							"id_device" :{
+								"type" : "string"
+							},
+							"fields":{
+								"type": "array",
+								"items" :{
+									"type" : "object",
+									"properties": {
+										"cle_params": {
+											"type" : "string"
+										},
+										"libelle_params": {
+											"type" : "string"
+										},
+										"valeur": {
+											"type" : "string"
+										}
+									}
+								}
+							}
+						}
+						
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/afficheRfidByIdDevice.php": 
+    {
+      "get": 
+      {
+        "tags": 
+        [
+          "afficheRfidByIdDevice"
+        ],
+
+        "summary": "Recuperation de tous les rfid",
+        "description": "Web service de recuperation de tous les rfid, y compris les informations nom_interne et tous les couples cle, libelle, valeur.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+			{
+            "name": "idDevice",
+            "in": "query",
+            "description": "L'id du device.",
+            "required": true,
+            "type": "string",
+            "default": ""
+          },
+		  {
+            "name": "affiche_emetteur",
+            "in": "query",
+            "description": "Filtrage pour l'emetteur (afficher que les parametres emetteurs, 0 ou 1)...",
+            "required": false,
+            "type": "integer",
+            "default": ""
+          },
+		  {
+            "name": "affiche_client",
+            "in": "query",
+            "description": "Filtrage pour le client (afficher que les parametres clients, 0 ou 1)...",
+            "required": false,
+            "type": "integer",
+            "default": ""
+          }
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"rfid": {
+						"type": "array",
+						"items" :{
+							"type" : "object",
+							"properties": {
+								"id" :{
+									"type" : "string"
+								},
+								"nom_interne" :{
+									"type" : "string"
+								},
+								"date_creation" :{
+									"type" : "string"
+								},
+								"date_reception" :{
+									"type" : "string"
+								},
+								"date_lecture_notification" :{
+									"type" : "string"
+								},
+								"id_device" :{
+									"type" : "string"
+								},
+								"fields":{
+									"type": "array",
+									"items" :{
+										"type" : "object",
+										"properties": {
+											"cle_params": {
+												"type" : "string"
+											},
+											"libelle_params": {
+												"type" : "string"
+											},
+											"valeur": {
+												"type" : "string"
+											},
+											"affiche_emetteur": {
+												"type" : "integer"
+											},
+											"affiche_client": {
+												"type" : "integer"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	,
+	"/rfid/ws/afficheAllRfid.php": 
+    {
+      "get": 
+      {
+        "tags": 
+        [
+          "afficheAllRfid"
+        ],
+
+        "summary": "Recuperation de tous les rfid",
+        "description": "Web service de recuperation de tous les rfid, y compris les informations nom_interne et tous les couples cle, libelle, valeur.",
+        "produces": 
+        [
+          "application/json"
+        ],
+
+        "deprecated": false,
+        "parameters": 
+        [
+        ],
+        "responses": 
+        {
+          "200": 
+          {
+            "description": "Resultat...",
+            "schema": 
+            {
+				"type": "object",
+				"properties": {
+					"code": {
+						"type": "string"
+					},
+					"libelle": {
+						"type": "string"
+					},
+					"rfid": {
+						"type": "array",
+						"items" :{
+							"type" : "object",
+							"properties": {
+								"id" :{
+									"type" : "string"
+								},
+								"nom_interne" :{
+									"type" : "string"
+								},
+								"date_creation" :{
+									"type" : "string"
+								},
+								"date_reception" :{
+									"type" : "string"
+								},
+								"date_lecture_notification" :{
+									"type" : "string"
+								},
+								"id_device" :{
+									"type" : "string"
+								},
+								"fields":{
+									"type": "array",
+									"items" :{
+										"type" : "object",
+										"properties": {
+											"cle_params": {
+												"type" : "string"
+											},
+											"libelle_params": {
+												"type" : "string"
+											},
+											"valeur": {
+												"type" : "string"
+											},
+											"affiche_emetteur": {
+												"type" : "integer"
+											},
+											"affiche_client": {
+												"type" : "integer"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+            }
+          }
+        }
+      }
+    }
+	
+	
+	
+  }
+
+}
