@@ -1,0 +1,10 @@
+{
+  "require": {
+    "attm2x/m2x-php": "~3.0"
+  },
+  "autoload": {
+        "psr-0": {
+            "Att\\M2X"       : "app/vendor/attm2x/m2x-php/src/"
+        }
+    }
+}
