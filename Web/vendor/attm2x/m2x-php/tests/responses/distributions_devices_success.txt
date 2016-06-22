@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 12 Dec 2014 19:54:02 GMT
+Content-Type: application/json
+Content-Length: 1475
+Status: 200 OK
+Link: <http://api-m2x.att.com/v2/?&page=1>; rel="first"
+Link: <http://api-m2x.att.com/v2/?&page=1>; rel="last"
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"total":2,"pages":1,"limit":10,"current_page":1,"devices":[{"url":"http://api-m2x.att.com/v2/devices/3b6a5121e1406bf042d3292f5ff419ba","name":"Bar Source","status":"enabled","serial":"test","tags":null,"location":{},"visibility":"private","description":"Foo Bar","created":"2014-12-10T08:32:15.501Z","updated":"2014-12-10T20:02:13.307Z","id":"3b6a5121e1406bf042d3292f5ff419ba","streams":{"count":1,"url":"http://api-m2x.att.com/v2/devices/3b6a5121e1406bf042d3292f5ff419ba/streams"},"distribution":"http://api-m2x.att.com/v2/distributions/ce21d58783bd50c4e4dc04919d01e81b","distribution_name":"Test Distribution","key":"8388f1243949d55de1b0a5d2969e2169","triggers":{"count":0,"url":"http://api-m2x.att.com/v2/devices/3b6a5121e1406bf042d3292f5ff419ba/triggers"}},{"url":"http://api-m2x.att.com/v2/devices/3f0b932448769c6b1a95e4b053e30b94","name":"Foo Source","status":"enabled","serial":"Foo Source","tags":null,"location":{},"visibility":"private","description":"Foo Bar","created":"2014-12-10T20:01:41.766Z","updated":"2014-12-10T20:02:41.385Z","id":"3f0b932448769c6b1a95e4b053e30b94","streams":{"count":1,"url":"http://api-m2x.att.com/v2/devices/3f0b932448769c6b1a95e4b053e30b94/streams"},"distribution":"http://api-m2x.att.com/v2/distributions/ce21d58783bd50c4e4dc04919d01e81b","distribution_name":"Test Distribution","key":"83477a3c5a182dffd22df6c0a9f28b4f","triggers":{"count":0,"url":"http://api-m2x.att.com/v2/devices/3f0b932448769c6b1a95e4b053e30b94/triggers"}}]}

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 09 Dec 2014 04:08:01 GMT
+Content-Type: application/json
+Content-Length: 575
+Status: 200 OK
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"url":"http://api-m2x.att.com/v2/devices/2dd1c43521cef93109a3e8a75d4d5a88","name":"Test Blueprint","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"private","description":"Foo Bar","created":"2014-12-09T04:04:31.757Z","updated":"2014-12-09T04:04:31.757Z","id":"2dd1c43521cef93109a3e8a75d4d5a88","streams":{"count":0,"url":"http://api-m2x.att.com/v2/devices/2dd1c43521cef93109a3e8a75d4d5a88/streams"},"key":"9cc1200a14172ec6eba11b1976cf3831","triggers":{"count":0,"url":"http://api-m2x.att.com/v2/devices/2dd1c43521cef93109a3e8a75d4d5a88/triggers"}}

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 09 Dec 2014 22:52:46 GMT
+Content-Type: application/json
+Content-Length: 109
+Status: 200 OK
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"end":"2014-12-09T22:52:46.817Z","stats":{"count":8.0,"min":50.0,"max":120.0,"avg":95.0,"stddev":27.386128}}

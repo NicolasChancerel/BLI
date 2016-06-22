@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 08 Dec 2014 21:01:02 GMT
+Content-Type: application/json
+Content-Length: 1775
+Status: 200 OK
+Link: <http://api-m2x.att.com/v2/?&page=1>; rel="first"
+Link: <http://api-m2x.att.com/v2/?&page=1>; rel="last"
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"total":3,"pages":1,"limit":10,"current_page":1,"devices":[{"url":"http://api-m2x.att.com/v2/devices/271b4b18b86a3d4d0cdcb9f41ca0ad46","name":"My Test Data Source","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"private","description":"","created":"2014-09-08T18:30:12.517Z","updated":"2014-09-08T18:30:13.064Z","id":"271b4b18b86a3d4d0cdcb9f41ca0ad46","streams":{"count":1,"url":"http://api-m2x.att.com/v2/devices/271b4b18b86a3d4d0cdcb9f41ca0ad46/streams"},"key":"4015e9ea5c8dd38f9ba14d5af37105c0","triggers":{"count":0,"url":"http://api-m2x.att.com/v2/devices/271b4b18b86a3d4d0cdcb9f41ca0ad46/triggers"}},{"url":"http://api-m2x.att.com/v2/devices/d3d76b30cf3ae7586389e24b9d19e28c","name":"Image Tests","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"private","description":"","created":"2014-09-30T23:17:09.534Z","updated":"2014-09-30T23:17:10.205Z","id":"d3d76b30cf3ae7586389e24b9d19e28c","streams":{"count":2,"url":"http://api-m2x.att.com/v2/devices/d3d76b30cf3ae7586389e24b9d19e28c/streams"},"key":"d342ec6112ae1d3c0e2295f4b8eaaec0","triggers":{"count":0,"url":"http://api-m2x.att.com/v2/devices/d3d76b30cf3ae7586389e24b9d19e28c/triggers"}},{"url":"http://api-m2x.att.com/v2/devices/dc8eea0760942f65bc320a849648de92","name":"Raspberry PI Memory","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"private","description":"","created":"2014-09-30T19:14:42.708Z","updated":"2014-09-30T19:14:43.269Z","id":"dc8eea0760942f65bc320a849648de92","streams":{"count":3,"url":"http://api-m2x.att.com/v2/devices/dc8eea0760942f65bc320a849648de92/streams"},"key":"8833689eb9d33af453816361c2f848d6","triggers":{"count":1,"url":"http://api-m2x.att.com/v2/devices/dc8eea0760942f65bc320a849648de92/triggers"}}]}

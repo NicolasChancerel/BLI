@@ -1,0 +1,12 @@
+HTTP/1.1 201 Created
+Server: nginx
+Date: Mon, 08 Dec 2014 20:03:15 GMT
+Content-Type: application/json
+Content-Length: 187
+Status: 201 Created
+Location: http://api-m2x.att.com/v2/keys/regenerated-key
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"name":"Test Bar","key":"regenerated-key","master":true,"stream":null,"expires_at":null,"expired":false,"origin":null,"permissions":["GET"],"device_access":"public"}

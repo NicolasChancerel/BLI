@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 10 Dec 2014 21:13:25 GMT
+Content-Type: application/json
+Content-Length: 928
+Status: 200 OK
+Link: <http://api-m2x.att.com/v2/?q=CPU&page=1>; rel="first"
+Link: <http://api-m2x.att.com/v2/?q=CPU&page=1>; rel="last"
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"total":2,"pages":1,"limit":10,"current_page":1,"devices":[{"url":"http://api-m2x.att.com/v2/devices/8b14106ffbda542fc67211b3e3ec9d1b","name":"rpi-temps","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"public","description":"Temps of RaspberryPi CPU and GPU","created":"2014-01-28T07:51:57.000Z","updated":"2014-05-14T22:35:38.720Z","id":"8b14106ffbda542fc67211b3e3ec9d1b","streams":{"count":1,"url":"http://api-m2x.att.com/v2/devices/8b14106ffbda542fc67211b3e3ec9d1b/streams"}},{"url":"http://api-m2x.att.com/v2/devices/1e33a3a11a68b615a554ac11218f24ca","name":"rPI-CPU-load","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"public","description":null,"created":"2014-01-28T08:20:29.000Z","updated":"2014-05-14T22:35:38.746Z","id":"1e33a3a11a68b615a554ac11218f24ca","streams":{"count":3,"url":"http://api-m2x.att.com/v2/devices/1e33a3a11a68b615a554ac11218f24ca/streams"}}]}

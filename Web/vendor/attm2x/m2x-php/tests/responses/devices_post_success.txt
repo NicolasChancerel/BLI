@@ -1,0 +1,12 @@
+HTTP/1.1 201 Created
+Server: nginx
+Date: Tue, 09 Dec 2014 17:26:36 GMT
+Content-Type: application/json
+Content-Length: 414
+Status: 201 Created
+Location: http://api-m2x.att.com/v2/devices/722014c0eac34261d89a707f911cfa92
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"url":"http://api-m2x.att.com/v2/devices/722014c0eac34261d89a707f911cfa92","name":"Foo Bar","status":"enabled","serial":null,"tags":null,"location":{},"visibility":"public","description":null,"created":"2014-12-09T17:26:36.504Z","updated":"2014-12-09T17:26:36.504Z","id":"722014c0eac34261d89a707f911cfa92","streams":{"count":0,"url":"http://api-m2x.att.com/v2/devices/722014c0eac34261d89a707f911cfa92/streams"}}

@@ -1,0 +1,10 @@
+HTTP/1.1 202 Accepted
+Server: nginx
+Date: Fri, 12 Dec 2014 18:37:09 GMT
+Content-Type: application/json
+Content-Length: 21
+Status: 202 Accepted
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+
+{"status":"accepted"}

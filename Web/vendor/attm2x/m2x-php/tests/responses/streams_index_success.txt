@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 09 Dec 2014 18:35:40 GMT
+Content-Type: application/json
+Content-Length: 919
+Status: 200 OK
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"streams":[{"name":"stream_one","display_name":null,"value":null,"latest_value_at":null,"type":"numeric","unit":{"label":"watt","symbol":"W"},"url":"http://api-m2x.att.com/v2/devices/c2b83dcb796230906c70854a57b66b0a/streams/stream_one","created":"2014-12-09T18:34:54.646Z","updated":"2014-12-09T18:34:54.646Z"},{"name":"stream_two","display_name":null,"value":null,"latest_value_at":null,"type":"alphanumeric","unit":{"label":"","symbol":""},"url":"http://api-m2x.att.com/v2/devices/c2b83dcb796230906c70854a57b66b0a/streams/stream_two","created":"2014-12-09T18:35:09.399Z","updated":"2014-12-09T18:35:09.399Z"},{"name":"stream_three","display_name":null,"value":null,"latest_value_at":null,"type":"numeric","unit":{"label":"dollar","symbol":"$"},"url":"http://api-m2x.att.com/v2/devices/c2b83dcb796230906c70854a57b66b0a/streams/stream_three","created":"2014-12-09T18:35:23.133Z","updated":"2014-12-09T18:35:23.133Z"}]}

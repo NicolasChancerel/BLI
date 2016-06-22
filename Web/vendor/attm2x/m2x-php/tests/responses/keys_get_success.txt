@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Thu, 04 Dec 2014 02:21:44 GMT
+Content-Type: application/json
+Content-Length: 203
+Status: 200 OK
+X-M2X-VERSION: v2.1.3-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"name":"Raspberry PI","key":"test-key","master":true,"stream":null,"expires_at":null,"expired":false,"origin":null,"permissions":["GET","POST","DELETE"],"device_access":"public"}

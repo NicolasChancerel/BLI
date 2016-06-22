@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 09 Dec 2014 20:44:35 GMT
+Content-Type: application/json
+Content-Length: 495
+Status: 200 OK
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"limit":100,"end":"2014-12-09T20:44:35.772Z","values":[{"timestamp":"2014-12-09T20:37:58.067Z","value":120.0},{"timestamp":"2014-12-09T20:37:54.756Z","value":120.0},{"timestamp":"2014-12-09T20:35:52.279Z","value":100.0},{"timestamp":"2014-12-09T20:35:44.858Z","value":100.0},{"timestamp":"2014-12-09T20:35:30.371Z","value":50.0},{"timestamp":"2014-12-09T20:31:04.981Z","value":50.0},{"timestamp":"2014-10-01T12:00:00.000Z","value":100.0},{"timestamp":"2013-10-01T12:00:00.000Z","value":120.0}]}

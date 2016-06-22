@@ -1,0 +1,12 @@
+HTTP/1.1 201 Created
+Server: nginx
+Date: Tue, 09 Dec 2014 20:03:45 GMT
+Content-Type: application/json
+Content-Length: 298
+Status: 201 Created
+Location: http://api-m2x.att.com/v2/devices/c2b83dcb796230906c70854a57b66b0a/streams/stream_foo
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"name":"stream_foo","display_name":null,"value":null,"latest_value_at":null,"type":"numeric","unit":{"label":"Foo","symbol":"F"},"url":"http://api-m2x.att.com/v2/devices/c2b83dcb796230906c70854a57b66b0a/streams/stream_foo","created":"2014-12-09T20:03:45.125Z","updated":"2014-12-09T20:03:45.125Z"}

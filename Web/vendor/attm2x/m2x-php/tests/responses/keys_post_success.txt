@@ -1,0 +1,12 @@
+HTTP/1.1 201 Created
+Server: nginx
+Date: Thu, 04 Dec 2014 20:48:55 GMT
+Content-Type: application/json
+Content-Length: 183
+Status: 201 Created
+Location: http://api-m2x.att.com/v2/keys/c037e38e4db215a4442f87fff111b982
+X-M2X-VERSION: v2.3.1-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"name":"Test Key","key":"c037e38e4db215a4442f87fff111b982","master":true,"stream":null,"expires_at":null,"expired":false,"origin":null,"permissions":["GET"],"device_access":"public"}

@@ -1,0 +1,12 @@
+HTTP/1.1 201 Created
+Server: nginx
+Date: Wed, 10 Dec 2014 17:54:25 GMT
+Content-Type: application/json
+Content-Length: 366
+Status: 201 Created
+Location: http://api-m2x.att.com/v2/distributions/d447a2c499bc009d96a7d693a2e5b909
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"id":"d447a2c499bc009d96a7d693a2e5b909","name":"FooBar Distribution","description":null,"visibility":"private","serial":null,"status":"enabled","url":"http://api-m2x.att.com/v2/distributions/d447a2c499bc009d96a7d693a2e5b909","created":"2014-12-10T17:54:25.020Z","updated":"2014-12-10T17:54:25.020Z","devices":{"total":0,"registered":0,"unregistered":0},"groups":[]}

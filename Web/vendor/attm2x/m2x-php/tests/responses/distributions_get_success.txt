@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 10 Dec 2014 17:19:10 GMT
+Content-Type: application/json
+Content-Length: 368
+Status: 200 OK
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"id":"ce21d58783bd50c4e4dc04919d01e81b","name":"Bar Distribution","description":"Foo Bar","visibility":"private","serial":null,"status":"enabled","url":"http://api-m2x.att.com/v2/distributions/ce21d58783bd50c4e4dc04919d01e81b","created":"2014-12-10T08:14:30.419Z","updated":"2014-12-10T08:14:30.419Z","devices":{"total":1,"registered":1,"unregistered":0},"groups":[]}

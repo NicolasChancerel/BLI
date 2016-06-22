@@ -1,0 +1,12 @@
+HTTP/1.1 201 Created
+Server: nginx
+Date: Wed, 10 Dec 2014 20:33:28 GMT
+Content-Type: application/json
+Content-Length: 372
+Status: 201 Created
+Location: http://api-m2x.att.com/v2/devices/271b4b18b86a3d4d0cdcb9f41ca0ad46/triggers/AUo16A-D8j1J6JfFlTV9
+X-M2X-VERSION: v2.3.2-alpha
+Vary: Accept-Encoding
+Vary: Accept
+
+{"id":"AUo16A-D8j1J6JfFlTV9","name":"Test Trigger","stream":"test-stream","condition":">","value":50,"unit":"bit/s","callback_url":"http://example.com","url":"http://api-m2x.att.com/v2/devices/271b4b18b86a3d4d0cdcb9f41ca0ad46/triggers/AUo16A-D8j1J6JfFlTV9","status":"enabled","send_location":false,"created":"2014-12-10T20:33:28.450Z","updated":"2014-12-10T20:33:28.450Z"}

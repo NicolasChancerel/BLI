@@ -1,0 +1,10 @@
+HTTP/1.1 404 Not Found
+Server: nginx
+Date: Wed, 14 Jan 2015 22:38:06 GMT
+Content-Type: application/json
+Content-Length: 49
+Status: 404 Not Found
+X-M2X-VERSION: v2.4.2-alpha
+Vary: Accept-Encoding
+
+{"message":"The specified device does not exist"}
