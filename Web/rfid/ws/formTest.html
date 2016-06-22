@@ -1,0 +1,37 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<h1>Test insert cle</h1>
+		<form action="./insertCle.php" method="POST">
+			Cle : <input type="text" name="cle" value=""><br/>
+			Libelle : <input type="text" name="libelle" value=""><br/>
+			<input type="submit">
+		</form>
+		<hr/>
+		<a href="./afficheCles.php"><h1>Get all Cles</h1></a>
+		<hr/>
+		<hr/>
+		<a href="./afficheAllRfid.php"><h1>Get all Rfid</h1></a>
+		<hr/>
+		<form action="./insertRfid.php" method="POST">
+			id : <input type="text" name="id" value=""><br/>
+			nom_interne : <input type="text" name="nom_interne" value=""><br/>
+			cles_params (separes par un ; : <input type="text" name="cles_params" value=""><br/>
+			valeurs (separes par un ; : <input type="text" name="valeurs" value=""><br/>
+			<input type="submit">
+		</form>
+		<hr/>
+		Affiche rfid by id
+		<form action="./afficheRfidById.php" method="GET">
+			id : <input type="text" name="id" value=""><br/>
+			<input type="submit">
+		</form>
+		<hr/>
+		Affiche rfid by id device
+		<form action="./afficheRfidByIdDevice.php" method="GET">
+			id : <input type="text" name="idDevice" value=""><br/>
+			<input type="submit">
+		</form>
+	</body>
+</html>
