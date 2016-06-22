@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="fr.laposte.bli.bli.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contenu Augmente"
+        android:id="@+id/contenuAugmente"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/imageView2"
+        android:background="@drawable/bar"
+        android:layout_below="@+id/imageView"
+        android:layout_alignEnd="@+id/TxtEmetteur"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TxtEmetteur"
+        android:textColor="#2b2b2b"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:textIsSelectable="false"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/bar"
+        android:layout_above="@+id/contenuAugmente"
+        android:layout_alignEnd="@+id/TxtEmetteur"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/test_NOM_PRODUIT"
+        android:textColor="#464646"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/sender"
+        android:layout_marginTop="46dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text1"
+        android:textSize="15sp"
+        android:layout_below="@+id/test_NOM_PRODUIT"
+        android:layout_marginLeft="5sp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text2"
+        android:textSize="15sp"
+        android:layout_marginLeft="5sp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignStart="@+id/text1"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text3"
+        android:textSize="15sp"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_marginLeft="5sp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom Produit :"
+        android:id="@+id/textView"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/text1"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ref produit :"
+        android:id="@+id/textView2"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date envoi :"
+        android:id="@+id/textView3"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="15sp" />
+</RelativeLayout>
